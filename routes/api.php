@@ -21,12 +21,11 @@ Route::middleware('auth:api')->prefix('v1')->group(function() {
 });
 
 Route::middleware('auth:api')->prefix('v1')->group(function() {
-    Route::post('login', [App\Http\Controllers\Users::class, 'signin'])->name('signin');
+    Route::post('/login', [App\Http\Controllers\Users::class, 'signin'])->name('signin');
+    Route::post('/logout', [App\Http\Controllers\Users::class, 'logout'])->name('logout');
+    Route::post('/register', [App\Http\Controllers\Users::class, 'register'])->name('register');
 });
 
-Route::post('logout', [App\Http\Controllers\Users::class, 'logout'])->name('logout');
-
-Route::post('register', [App\Http\Controllers\Users::class, 'register'])->name('register');
 
 
 
